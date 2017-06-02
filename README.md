@@ -28,8 +28,8 @@ You need to add an array for thumbor configuration to your `_config.yml` file:
 
 ```yaml
 thumbor:
-	url: https://your-thumbor-server
-	key: your-key
+  url: "https://your-thumbor-server"
+  key: "your-key"
 ```
 
 
