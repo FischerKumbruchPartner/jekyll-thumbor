@@ -21,6 +21,7 @@ module Jekyll
     end
 
     def render(context)
+      @url = Liquid::Template.parse(@url).render context
       @config = context.registers[:site].config['thumbor']
 
       image = Thumbor::Cascade.new(@config['key'], @url)
@@ -31,4 +32,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('thumbor', Jekyll::ThumborTag)
+Liquid::Template.register_tag('thumbor_tag', Jekyll::ThumborTag)
