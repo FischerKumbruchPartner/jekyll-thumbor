@@ -7,19 +7,13 @@ A [Jekyll](https://jekyllrb.com/) template tag for [Thumbor](https://github.com/
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jekyll-thumbor'
+gem 'jekyll-thumbor', :git => 'git@github.com:FischerKumbruchPartner/jekyll-thumbor.git'
 ```
 
 And then execute:
 
 ```
 $ bundle
-```
-
-Or install it yourself as:
-
-```
-$ gem install jekyll-thumbor
 ```
 
 You now need to enable the plugin in your Jekyll web site. Append it to the `gems` array in your `_config.yml` file:
