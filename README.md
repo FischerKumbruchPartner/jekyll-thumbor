@@ -31,6 +31,7 @@ thumbor:
   url: "https://your-thumbor-server"
   key: "your-key"
 ```
+**Do not add a slash at the end of your url**
 
 
 ```html
