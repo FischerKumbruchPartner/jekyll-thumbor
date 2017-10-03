@@ -19,7 +19,7 @@ $ bundle
 You now need to enable the plugin in your Jekyll web site. Append it to the `gems` array in your `_config.yml` file:
 
 ```yaml
-gems:
+plugins:
 - jekyll-thumbor
 ```
 
@@ -34,7 +34,10 @@ thumbor:
 
 
 ```html
-<img src="{% thumbor_tag https://example.org/picture.jpg, width: 500, height: 500 %}"
+<img src="{% thumbor_tag https://example.org/picture.jpg, width: 500, height: 500 %}">
+
+
+<img src="{% thumbor_tag {{ page.background_img | absolute_url}}, width: 500, height: 500 %}">
 ```
 
 ## Development
