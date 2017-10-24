@@ -4,7 +4,7 @@ require "ruby-thumbor"
 module Jekyll
   class ThumborTag < Liquid::Tag
 
-    VERSION = "0.9"
+    VERSION = "0.91"
 
     def initialize(tag_name, text, tokens)
       super
@@ -23,11 +23,15 @@ module Jekyll
     def render(context)
       url = Liquid::Template.parse( @url ).render( context )
       config = context.registers[:site].config['thumbor']
-
-      image = Thumbor::Cascade.new( config['key'], url )
-      image_url = image.width( @parameters['width'] ).height( @parameters['height'] ).generate
-
-      return "#{config['url']}#{image_url}"
+      
+      if config['active_environments'].include[JEKYLL_ENV]
+        image = Thumbor::Cascade.new( config['key'], url )
+        image_url = image.width( @parameters['width'] ).height( @parameters['height'] ).generate
+        return "#{config['url']}#{image_url}"
+      else
+        return url
+      end
+      
     end
   end
 end

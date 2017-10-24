@@ -7,7 +7,7 @@ A [Jekyll](https://jekyllrb.com/) template tag for [Thumbor](https://github.com/
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jekyll-thumbor', :git => 'git@github.com:FischerKumbruchPartner/jekyll-thumbor.git'
+gem 'jekyll-thumbor', :git => 'https://github.com/FischerKumbruchPartner/jekyll-thumbor.git'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ You now need to enable the plugin in your Jekyll web site. Append it to the `gem
 
 ```yaml
 plugins:
-- jekyll-thumbor
+  - jekyll-thumbor
 ```
 
 ## Usage
@@ -30,6 +30,7 @@ You need to add an array for thumbor configuration to your `_config.yml` file:
 thumbor:
   url: "https://your-thumbor-server"
   key: "your-key"
+  active_environments: ["development", "production"]
 ```
 **Do not add a slash at the end of your url**
 
